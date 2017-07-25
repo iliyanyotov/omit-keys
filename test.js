@@ -49,34 +49,35 @@ describe('omit-keys', function () {
   });
 
   it('should return the object removing the keys using the callback by value.', function () {
-    var fn = function (value) {return value === 2 };
+    var fn = function (value) {
+      return value === 2
+    };
+
     omitKeys(obj, fn).should.deepEqual({
       a: 2
     });
   });
 
   it('should return the object removing the keys using the callback by key.', function () {
-    var fn = function (_, key) { return key === 'a' };
+    var fn = function (_, key) {
+      return key === 'a'
+    };
+
     omitKeys(obj, fn).should.deepEqual({
       a: 2
     });
   });
+
+  it('should return the object removing the keys using the callback.', function () {
+    var fn = function (_, key, object) {
+      var keys = Object.keys(object);
+
+      return keys.indexOf(key) % 2 === 0;
+    };
+
+    omitKeys(obj, fn).should.deepEqual({
+      a: 2,
+      c: 10
+    });
+  });
 });
-
-/*
-const obj = {
-  a: 1,
-  b: 2,
-  c: 3,
-  d: 4,
-}
-
-const key = 'a'
-const keys = ['a', 'b']
-const fn = (_, key) => key === 'c'
-
-console.log(omitKeys(obj, key))
-console.log(omitKeys(obj, keys))
-console.log(omitKeys(obj, fn))
-
- */
