@@ -37,20 +37,20 @@ describe('omit-keys', function () {
     var omit = ['b'];
     omitKeys(obj, omit).should.deepEqual({
       a: 2,
-      c: 10,
+      c: 10
     });
   });
 
   it('should return the object removing the passed keys.', function () {
     var omit = ['a', 'b'];
     omitKeys(obj, omit).should.deepEqual({
-      c: 10,
+      c: 10
     });
   });
 
   it('should return the object removing the keys using the callback by value.', function () {
     var fn = function (value) {
-      return value === 2
+      return value === 2;
     };
 
     omitKeys(obj, fn).should.deepEqual({
@@ -60,7 +60,7 @@ describe('omit-keys', function () {
 
   it('should return the object removing the keys using the callback by key.', function () {
     var fn = function (_, key) {
-      return key === 'a'
+      return key === 'a';
     };
 
     omitKeys(obj, fn).should.deepEqual({
