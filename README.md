@@ -61,6 +61,24 @@ omitKeys({
 //=> { a: 2 }
 ```
 
+```js
+var isEven = (number) => number % 2 === 0;
+ 
+var fn = (_, key, object) => {
+  var keys = Object.keys(object);
+ 
+  return isEven(keys.indexOf(key));
+};
+ 
+omitKeys({
+  a: 2,
+  b: 5,
+  c: 10
+}, fn);
+ 
+//=> { a: 2, c: 10 }
+```
+
 ## Tests
 
 To run the tests with mocha use:
