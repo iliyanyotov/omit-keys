@@ -1,0 +1,27 @@
+{
+  "name": "omit-keys",
+  "version": "1.0.0",
+  "description": "Utility to copy an object excluding given keys using single argument, an array of arguments or a callback.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iliyanyotov/omit-keys.git"
+  },
+  "author": "Iliyan Yotov <iliyan.yotov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iliyanyotov/omit-keys/issues"
+  },
+  "homepage": "https://github.com/iliyanyotov/omit-keys#readme",
+  "dependencies": {
+    "isarray": "^2.0.2",
+    "isobject": "^3.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.4.2",
+    "should": "^11.2.1"
+  }
+}
